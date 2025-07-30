@@ -28,3 +28,22 @@ MenuBuilder fonksiyonu ve resouces.js dosyasından gelen menuElemanlari arrayini
 Not 1: İlk 3 adım MenuBuilder içinde yapılmalı.
 Not 2: MenuBuilder fonksiyonunda oluşturduklarınızı return etmeyi unutmayın.
 */
+
+function MenuBuilder(menuElements) {
+  const menu = document.createElement("div");
+  menu.classList.add("menu");
+  const menuList = document.createElement("ul");
+  menuElements.forEach((element) => {
+    const listElement = document.createElement("li");
+    listElement.textContent = element;
+    menuList.appendChild(listElement);
+  });
+  menu.appendChild(menuList);
+  document.querySelector(".menu-button").addEventListener("click", (event) => {
+    menu.classList.toggle("isOpen");
+  });
+  return menu;
+}
+
+const menu = MenuBuilder(menuElemanlari);
+document.querySelector(".header").appendChild(menu);
