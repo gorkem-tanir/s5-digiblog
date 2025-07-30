@@ -44,7 +44,7 @@ function NewsBuilder(news) {
   const newsHeader = document.createElement("h2");
   newsHeader.textContent = news.baslik;
   const newsDate = document.createElement("p");
-  newsDate.classList.add("tarih");
+  newsDate.classList.add("date");
   newsDate.textContent = news.tarih;
   const paragraph1 = document.createElement("p");
   const paragraph2 = document.createElement("p");
